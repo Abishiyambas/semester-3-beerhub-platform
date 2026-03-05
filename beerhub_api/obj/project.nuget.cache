@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "56t7EN13AeI=",
+  "dgSpecHash": "DJGffEON9UI=",
   "success": true,
-  "projectFilePath": "/Users/abishiyambaskaran/Desktop/Semesterprojekter/beerhub-platform/beerhub_api/beerhub_api.csproj",
+  "projectFilePath": "/Users/abishiyambaskaran/Desktop/Projekter/semester-3-beerhub-platform/beerhub_api/beerhub_api.csproj",
   "expectedPackageFiles": [
     "/Users/abishiyambaskaran/.nuget/packages/bouncycastle.cryptography/2.6.2/bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "/Users/abishiyambaskaran/.nuget/packages/google.protobuf/3.32.0/google.protobuf.3.32.0.nupkg.sha512",

@@ -1280,11 +1280,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/abishiyambaskaran/Desktop/Semesterprojekter/beerhub-platform/beerhub_api/beerhub_api.csproj",
+      "projectUniqueName": "/Users/abishiyambaskaran/Desktop/Projekter/semester-3-beerhub-platform/beerhub_api/beerhub_api.csproj",
       "projectName": "beerhub_api",
-      "projectPath": "/Users/abishiyambaskaran/Desktop/Semesterprojekter/beerhub-platform/beerhub_api/beerhub_api.csproj",
+      "projectPath": "/Users/abishiyambaskaran/Desktop/Projekter/semester-3-beerhub-platform/beerhub_api/beerhub_api.csproj",
       "packagesPath": "/Users/abishiyambaskaran/.nuget/packages/",
-      "outputPath": "/Users/abishiyambaskaran/Desktop/Semesterprojekter/beerhub-platform/beerhub_api/obj/",
+      "outputPath": "/Users/abishiyambaskaran/Desktop/Projekter/semester-3-beerhub-platform/beerhub_api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/abishiyambaskaran/.nuget/NuGet/NuGet.Config"
