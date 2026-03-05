@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "CtbZ7vR9zXHCgh09PhDFWB8oHqVNdbRhQ7wNXschI0U=",
+  "Source": "beerhub_api",
+  "BasePath": "_content/beerhub_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

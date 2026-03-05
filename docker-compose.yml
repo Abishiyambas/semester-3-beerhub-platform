@@ -1,0 +1,74 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: beerhub-mysql-1
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: beerhub
+    ports:
+      - "3306:3306"
+    volumes:
+      - beerhub_mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  api:
+    build:
+      context: ./beerhub_api
+      dockerfile: Dockerfile
+    container_name: beerhub-api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_URLS: http://+:5189
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DB_PORT: 3306
+      DB_DATABASE: beerhub
+      DB_USERNAME: root
+      DB_PASSWORD: rootsecret
+      # OpcUa__EndpointUrl: "opc.tcp://host.docker.internal:4840"
+      OpcUa__EndpointUrl: "opc.tcp://192.168.0.122:4840"
+    depends_on:
+      - mysql
+    ports:
+      - "5189:5189"
+    networks:
+      - app-network
+
+  laravel:
+    build:
+      context: ./beerhub
+      dockerfile: Dockerfile
+    container_name: beerhub-laravel
+    restart: unless-stopped
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8000
+      APP_KEY: base64:3ksLdX8exV/WiP//Pg7lJol9uBvZezixW3cNgW+t3jI=
+
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: beerhub
+      DB_USERNAME: root
+      DB_PASSWORD: rootsecret
+
+      BEERHUB_API_BASE_URL: http://api:5189
+      SESSION_DRIVER: database
+    depends_on:
+      - mysql
+      - api
+    ports:
+      - "8000:80"
+    volumes:
+      - ./beerhub:/var/www/html
+    networks:
+      - app-network
+
+volumes:
+  beerhub_mysql_data:
+
+networks:
+  app-network:
+    driver: bridge

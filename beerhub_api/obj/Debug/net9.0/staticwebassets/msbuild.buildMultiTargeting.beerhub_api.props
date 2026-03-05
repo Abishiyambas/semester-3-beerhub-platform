@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/beerhub_api.props" />
+</Project>

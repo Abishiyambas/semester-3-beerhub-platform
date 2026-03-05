@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: beerhub-mysql-1
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: beerhub
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
